@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Para mi gabrielito 🎂💗</title>
+
+<style>
+body {
+  margin: 0;
+  background: linear-gradient(to bottom, #ffb6d9, #ffe6f5);
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin-top: 40px;
+  color: #ff1493;
+}
+
+.subtitle {
+  color: #cc0066;
+  margin-bottom: 30px;
+}
+
+.cake-container {
+  margin-top: 40px;
+}
+
+.cake {
+  position: relative;
+  width: 220px;
+  height: 120px;
+  margin: auto;
+}
+
+.layer {
+  width: 220px;
+  height: 100px;
+  background: #ff69b4;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.candle {
+  width: 12px;
+  height: 45px;
+  background: white;
+  position: absolute;
+  top: -40px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.candle:nth-child(2) { left: 40px; }
+.candle:nth-child(3) { left: 100px; }
+.candle:nth-child(4) { left: 160px; }
+
+.flame {
+  width: 16px;
+  height: 22px;
+  background: orange;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: -2px;
+  transition: 0.3s;
+}
+
+.off {
+  opacity: 0;
+}
+
+#letter {
+  display: none;
+  margin: 50px auto;
+  background: white;
+  width: 85%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎂 Feliz Cumpleaños mi gabrielito 💗</h1>
+<p class="subtitle">Toca las velitas y pide un deseo ✨</p>
+
+<div class="cake-container">
+  <div class="cake">
+    <div class="layer"></div>
+
+    <div class="candle" onclick="blow(this)">
+      <div class="flame"></div>
+    </div>
+
+    <div class="candle" onclick="blow(this)">
+      <div class="flame"></div>
+    </div>
+
+    <div class="candle" onclick="blow(this)">
+      <div class="flame"></div>
+    </div>
+
+  </div>
+</div>
+
+<div id="letter">
+  <h2>💌 Para ti</h2>
+  <p>
+  Feliz cumpleaños amorcito lindo 💗<br><br>
+  Te amo con todo mi corazón.<br><br>
+  Ojalá que te la pases muy bien y cumplas muchos añotes más.<br><br>
+  Gracias por existir y hacer mis días más lindos, me haces muy feliz.<br><br>
+  Te amoooo <br><br>
+  Happi Birtaiii 🎂✨
+  </p>
+</div>
+
+<script>
+let velas = 3;
+
+function blow(candle) {
+  let flame = candle.querySelector(".flame");
+
+  if (!flame.classList.contains("off")) {
+    flame.classList.add("off");
+    velas--;
+
+    if (velas === 0) {
+      document.getElementById("letter").style.display = "block";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
